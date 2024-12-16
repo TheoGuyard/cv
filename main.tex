@@ -1,57 +1,98 @@
-%!TEX aux_directory = aux
-%!TEX output_directory = aux
+% ========================================================
+% Author: Theo Guyard (http://theoguyard.github.io)
+% Date: 2024
+% Design: Credits to Hause Lin's CV (hauselin.com)
+% 
+% ========================================================
+
 \documentclass[11pt]{article}
 
-% Style file options
-%   - []: enable editions macros
-%   - [final]: remove edition macros
-\usepackage[]{TGstyle}
+\usepackage[margin=1in]{geometry}
+\usepackage[
+  backend=biber,
+  maxnames=20,
+  style=nature,
+  sorting=ydnt,
+  defernumbers=true,
+]{biblatex}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{bookmark}
+\usepackage{fontawesome}
+\usepackage{ragged2e}
+\usepackage{soul} 
+\usepackage{kpfonts}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{etaremune}
+\hypersetup{
+  colorlinks=true,
+  breaklinks=true,
+  linkcolor=cornflowerblue,
+  urlcolor=cornflowerblue,
+  anchorcolor=cornflowerblue,
+  citecolor=cornflowerblue,
+  pdftitle={cv_theo_guyard},
+  pdfauthor={Theo Guyard},
+  bookmarksopen=true,
+}
 
-% ------ Metadata ------ %
+% \let\oldsection\section
+% \renewcommand\section{\clearpage\oldsection}
 
-\title{Template paper}
-\author{Theo Guyard \\ \small{Affiliation}}
-\date{\today}
+\begin{document}
 
-% ------ Headings ------ %
+\include{sections/colors.tex}
 
-\input{headings/packages}
-\input{headings/macros}
-\input{headings/glossaries}
-\usepackage{kmath}
 
-% ------ Edition macros ------ %
+\begin{center}
+  \rule{\textwidth}{2pt} \\[1em]
+  {\LARGE\textbf{Théo Guyard}} \\[0.5em]
+  {\Large{PhD and Engineer in Applied Mathematics}} \\[1em]
+  \href{mailto:theo.guyard.job@gmail.com}{\faEnvelope~Mail}
+  \hspace{1em}
+  \href{https://theoguyard.github.io}{\faLink~Website}
+  \hspace{1em}
+  \href{https://github.com/TheoGuyard}{\faGithub~Github}
+  \hspace{1em}
+  \href{https://scholar.google.com/citations?user=xwtKGaEAAAAJ&hl=en}{\faMortarBoard~Scholar} \\
+  \rule{\textwidth}{2pt}
+\end{center}
 
-\ProvideEditionMacros{TG}{blue}
+\pdfbookmark[1]{Education}{}
+\section*{Education}
+\input{sections/education}
 
-% ------ Document ------ %
+\pdfbookmark[1]{Awards \& Honors}{awards}
+\section*{Awards \& Honors}
+\label{awards}
+\input{sections/awards}
 
-\begin{document} 
+\pdfbookmark[1]{Publications}{publications}
+\section*{Publications}
+\label{publications}
+\input{sections/publications}
 
-\maketitle
+\pdfbookmark[1]{Tools \& Software}{tools}
+\section*{Tools \& Software}
+\label{tools}
+\input{sections/tools}
 
-\lipsum[1]
+\pdfbookmark[1]{Presentations}{presentations}
+\section*{Presentations}
+\label{presentations}
+\input{sections/presentations}
 
-\begin{equation}
-    \tag{$\ppb$}
-    \textstyle
-    \min_{\pv \in \kR^{\pdim}} \lfunc(\pv)
-\end{equation}
+\pdfbookmark[1]{Teaching}{teaching}
+\section*{Teaching}
+\label{teaching}
+\input{sections/teaching}
 
-\gls{mip}
-\citep{bauschke2017convex}
-\AddTG{Blablabla}
-\RemTG{Blablabla}
-\SupTG{Blablabla}
-\AddTodo{Blablabla}
+\pdfbookmark[1]{Scientific Service}{service}
+\section*{Scientific Service}
+\label{service}
+\input{sections/service}
 
-\begin{proposition}
-    \label{prop:prop}
-    Blablabla
-\end{proposition}
 
-\Cref{prop:prop} tells blablabla.
-
-\bibliography{main}
-
-\end{document}z
+\end{document}
