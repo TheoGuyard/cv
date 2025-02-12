@@ -1,126 +1,21 @@
-% ========================================================
-% Author: Theo Guyard (http://theoguyard.github.io)
-% Date: 2024
-% Design: Credits to Hause Lin's CV (hauselin.com)
-% ========================================================
+\documentclass[10pt, letterpaper]{article}
 
-\documentclass[11pt]{article}
-
-\usepackage[margin=1in]{geometry}
-\usepackage[
-  backend=biber,
-  maxnames=20,
-  style=nature,
-  sorting=ydnt,
-  defernumbers=true,
-]{biblatex}
-\usepackage{array}
-\usepackage{longtable}
-\usepackage{graphicx}
-\usepackage{tikz}
-\usetikzlibrary{shadows.blur,fadings,calc}
-\usepackage{tikzpagenodes}
-\usepackage{bookmark}
-\usepackage{fontawesome}
-\usepackage{ragged2e}
-\usepackage{soul} 
-\usepackage{kpfonts}
-\usepackage[T1]{fontenc}
-\usepackage{xcolor}
-\usepackage{hyperref}
-\usepackage{etaremune}
-\hypersetup{
-  colorlinks=true,
-  breaklinks=true,
-  linkcolor=cornflowerblue,
-  urlcolor=cornflowerblue,
-  anchorcolor=cornflowerblue,
-  citecolor=cornflowerblue,
-  pdftitle={cv_theo_guyard},
-  pdfauthor={Theo Guyard},
-  bookmarksopen=true,
-}
-
-% \let\oldsection\section
-% \renewcommand\section{\clearpage\oldsection}
+\usepackage{cvstyle}
 
 \begin{document}
-
-\include{sections/colors.tex}
-
-\begin{center}
-  \begin{minipage}{0.25\linewidth}
-    \begin{tikzpicture}
-      \clip (0,0) circle (2cm) node (picture) {\includegraphics[width=\linewidth]{picture.jpg}};
-      \draw[ultra thick] (0,0)  circle (2cm);
-    \end{tikzpicture}  
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.7\linewidth}
     \begin{center}
-      {\LARGE\textbf{Théo Guyard}} \\[0.5em]
-      {\Large{Postdoctoral Researcher at Polytechnique Montréal}} \\[1em]
-      \href{mailto:theo.guyard.job@gmail.com}{\faEnvelope~Contact}
-      \hspace{1em}
-      \href{https://theoguyard.github.io}{\faLink~Website}
-      \hspace{1em}
-      \href{https://github.com/TheoGuyard}{\faGithub~Github}
-      \hspace{1em}
-      \href{https://scholar.google.com/citations?user=xwtKGaEAAAAJ&hl=en}{\faMortarBoard~Scholar}
+        \color{primaryColor}
+        \fontsize{30 pt}{30 pt}
+        \textbf{Théo Guyard}
     \end{center}
-  \end{minipage}
-\end{center}
-
-
-% \begin{center}
-%   \rule{\textwidth}{2pt} \\[1em]
-%   {\LARGE\textbf{Théo Guyard}} \\[0.5em]
-%   {\Large{Postdoctoral Researcher at Polytechnique Montréal}} \\[1em]
-%   \href{mailto:theo.guyard.job@gmail.com}{\faEnvelope~Contact}
-%   \hspace{1em}
-%   \href{https://theoguyard.github.io}{\faLink~Website}
-%   \hspace{1em}
-%   \href{https://github.com/TheoGuyard}{\faGithub~Github}
-%   \hspace{1em}
-%   \href{https://scholar.google.com/citations?user=xwtKGaEAAAAJ&hl=en}{\faMortarBoard~Scholar} \\
-%   \rule{\textwidth}{2pt}
-% \end{center}
-
-\pdfbookmark[1]{Education}{}
-\section{Academic Curriculum}
-\input{sections/education}
-
-\pdfbookmark[1]{Awards \& Honors}{awards}
-\section{Awards \& Honors}
-\label{awards}
-\input{sections/awards}
-
-\pdfbookmark[1]{Publications}{publications}
-\section{Publications}
-\label{publications}
-\input{sections/publications}
-
-\clearpage
-
-\pdfbookmark[1]{Tools \& Software}{tools}
-\section{Tools \& Software}
-\label{tools}
-\input{sections/tools}
-
-\pdfbookmark[1]{Presentations}{presentations}
-\section{Presentations}
-\label{presentations}
-\input{sections/presentations}
-
-\pdfbookmark[1]{Teaching}{teaching}
-\section{Teaching}
-\label{teaching}
-\input{sections/teaching}
-
-\pdfbookmark[1]{Scientific Service}{service}
-\section{Scientific Service}
-\label{service}
-\input{sections/service}
-
-
+    \vspace{0.3 cm}
+    \input{sections/contact}
+    \input{sections/summary}
+    \input{sections/education}
+    \clearpage
+    \input{sections/awards}
+    \input{sections/publications}
+    \input{sections/presentations}
+    \input{sections/softwares}
+    \input{sections/duties}
 \end{document}
