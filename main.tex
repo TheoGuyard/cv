@@ -1,32 +1,208 @@
-\documentclass[10pt, letterpaper]{article}
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+\usepackage{standalone}
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{black} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 
-\usepackage{cvstyle}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.85]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{fontawesome}
+\usepackage{marvosym}
+\usepackage{multibbl}
+\newcommand\Colorhref[3][gray]{\href{#2}{\color{#1}#3}}
+
+
+\firstname{THÉO}
+\familyname{GUYARD}
+\title{Postdoctoral Researcher in Optimization \\ PhD in Applied Mathematics}
+\address{812 Rue Cherrier}{Montréal, QC H2L 1H4, Canada}
+\email{guyard.theo@gmail.com} 
+\mobile{(+33) 0630103928}
+\age{27 years old}
+
+\extrainfo{
+  \faLink~\href{https://theoguyard.github.io}{Website}
+  ~
+  \faGithub~\href{https://github.com/TheoGuyard}{Github}
+  ~
+  \faGoogle~\href{https://scholar.google.fr/citations?user=xwtKGaEAAAAJ}{Scholar}
+  ~
+  \faLinkedin~\href{https://www.linkedin.com/in/théo-guyard-529250155}{Linkedin}
+}
+
+% \photo[70pt][0.3pt]{picture} % The first bracket is the picture height, the second is %the thickness of the frame around the picture (0pt for no frame)
+%\quote{Not Attention, Patience is all we need.}
+
+
+\newcommand{\cvdoublecolumn}[2]{%
+  \cvitem[.75em]{}{%
+    \begin{minipage}[t]{\listdoubleitemcolumnwidth}#1\end{minipage}%
+    \hfill%
+    \begin{minipage}[t]{\listdoubleitemcolumnwidth}#2\end{minipage}%
+    }%
+}
+
+
 
 \begin{document}
-    \begin{center}
-        {
-            \color{primaryColor}
-            \fontsize{30 pt}{30 pt}
-            \textbf{Théo Guyard}
-        }
-        ~\\
-        ~\\
-        \begin{tabular}{cccc}
-            \href{mailto:theo.guyard.job@gmail.com}{\faIcon{envelope}~\texttt{Email}} &
-            \href{https://theoguyard.github.io}{\faIcon{link}~\texttt{Website}} &
-            \href{https://scholar.google.com/citations?user=xwtKGaEAAAAJ}{\faIcon{graduation-cap}~\texttt{Scholar}} &
-            \href{https://github.com/TheoGuyard}{\faIcon{github}~\texttt{Github}}
-        \end{tabular}
-    \end{center}
-    \input{sections/contact}
-    \input{sections/summary}
-    \input{sections/education}
-    \input{sections/diplomas}
-    \input{sections/awards}
-    \input{sections/grants}
-    \input{sections/publications}
-    \input{sections/presentations}
-    \input{sections/softwares}
-    \input{sections/duties}
-    \input{sections/teaching}
+
+\makecvtitle
+
+\vspace*{-1cm}
+
+\section{Profile}
+
+I am a researcher in applied mathematics with a strong interest in combinatorial optimization methods for machine learning.
+Throughout my different projects, I have developed solid expertise in these fields.
+Implementation aspects are always central to my contributions, as I consider practical performance and empirical evaluation as important as theoretical properties when it comes to real-world applications.
+I am aiming to pursue a long-term career in the design of optimization methods, ideally combining advanced theoretical development, cutting-edge implementation tasks, and offering opportunities for continuous learning.
+
+\section{Positions and Education}
+
+\cventry{2025 - now}{Postdoctoral Researcher}{SCALE-AI Chair at Polytechnique Montréal}{}{Canada}
+{New algorithms for combinatorial optimization problems inspired by machine learning techniques.~\\Supervised by \Colorhref{https://scholar.google.com/citations?user=qbO0xwUAAAAJ}{Thibaut Vidal}.}
+
+\cventry{2021 - 2024}{PhD in Applied Mathematics}{INRIA and INSA Rennes}{}{France}
+{Branch-and-bound algorithms for L0-regularized problems related to machine learning tasks.~\\ Supervised by \Colorhref{https://scholar.google.fr/citations?user=wO7HamwAAAAJ}{Cédric Herzet}, \Colorhref{https://scholar.google.fr/citations?user=2LSEQYcAAAAJ}{Clément Elvira} and \Colorhref{https://www.researchgate.net/profile/Ayse-Arslan-7}{Ayse-Nur Arlan}.}
+
+
+\cventry{2018 - 2021}{MSc in Applied Mathematics with Research Cursus}{INSA Rennes}{}{France}
+{Lectures and projects on optimization, machine learning, informatics, and statistics, among others. Collaborations with \Colorhref{https://www.inria.fr}{INRIA} and \Colorhref{https://irmar.univ-rennes.fr}{IRMAR} researchers alongside the MSc as a trainee.}
+
+\cventry{2016 - 2018}{BSc in Engineering}{INSA Rennes}{}{France}
+{Lectures and projects on mathematics, engineering, informatics, physics, and biology, among others.}
+
+\section{Expertise}
+
+\cvitem{Combinatorial Optimization}{Branch-and-bound algorithms • Structure-exploiting branching rules • Polyhedral decomposition techniques • Convexification via perspective transformations • Big-M tightening • Metaheuristics and dynamic programming for vehicle routing • Fast linear algebra operations}
+
+\cvitem{Linear/Convex Optimization}{Active-set, proximal, primal-dual, and coordinate-descent methods • Dimensionality reduction techniques • Lagrange and Fenchel duality theory • Convex analysis theory • KKT optimality conditions • Preconditioning techniques}
+  
+\cvitem{Mathematical Modelling}{MIP/MINLP/SOCP/LP formulation • Model strengthening strategies • Solver libraries with integrated callbacks (Gurobi, Mosek, CPLEX, SCIP, ...) • Generic mathematical modelling libraries (\texttt{cvxpy}, \texttt{jump}, \texttt{pyomo}, \texttt{pybnb}, \texttt{ampl}, ...)}
+
+\cvitem{Machine Learning}{Decision tree models • Generalized linear models • Nearest neighbor search methods • Statistical learning • Sparse signal processing • Fairness and privacy}
+
+
+\section{Technical Skills}
+
+\cvitem{Programming}{Python • Julia • C++ • Rust • R • Matlab}
+
+\cvitem{Informatics}{HPC clusters with SLURM • Git • CI pipelines • Linux • LaTeX • BLAS and LAPACK}
+
+\cvitem{Languages}{French (native) • English (fluent) • Spanish (intermediate)}
+
+\vfill
+
+\begin{center}
+  The rest of this document details my research activities.
+\end{center}
+ 
+
+\clearpage
+
+\section{Main Research Projects}
+
+\cventry{Since 2025}{Decision Trees for Exact Combinatorial Optimization}{}{}{}
+{We develop a novel kind of exact solution method for combinatorial optimization problems by encoding the feasible set into a decision tree structure. The tree only needs to be constructed once for a given feasible set, and the problem can then be solved for any new objective function via a fast traversal operation. In contrast to traditional approaches, this method allows for very efficient re-optimization capabilities and is particularly relevant in dynamic or real-time contexts. \\ Collaborators: \Colorhref{https://scholar.google.com/citations?user=qbO0xwUAAAAJ}{Thibaut Vidal} (Polytechnique Montréal), \Colorhref{https://scholar.google.fr/citations?user=umGuS18AAAAJ}{Maximilian Schiffer} (Technical University of Munich), \Colorhref{https://scholar.google.fr/citations?user=ZHLJCRkAAAAJ}{Eduardo Uchoa} (Fluminense University), \Colorhref{https://github.com/cleberoli}{Cleber Oliveira} (Catholic University of Rio de Janeiro).}
+
+
+\cventry{Since 2025}{Routing Problems for Orbital Debris Remediation with NASA}{}{}{}
+{NASA is planning to remediate debris orbiting Earth to prevent collisions with operational satellites. The routing of debris-removing spacecraft is a key component to the mission success. In collaboration with NASA, we are developing an algorithm combining vehicle routing metaheuristics and machine learning pipelines to construct an optimal route plan of debris to be visited, mitigating fuel cost and mission time. \\ Collaborators: \Colorhref{https://scholar.google.com/citations?user=qbO0xwUAAAAJ}{Thibaut Vidal} (Polytechnique Montréal), \Colorhref{https://scholar.google.fr/citations?user=UHE0jioAAAAJ}{Mingde Yin} (University of Toronto), \Colorhref{https://www.linkedin.com/in/grahammackintosh/}{Graham Mackintosh} (NASA), \Colorhref{https://www.linkedin.com/in/thomas-templin/}{Thomas Tremplin} (NASA).}
+
+\cventry{Since 2021}{Combinatorial Optimization Methods for L0-norm Problems}{}{}{}
+{L0-norm problems are used in machine learning to build interpretable models with few parameters. They are of combinatorial nature and had previously mostly only been treated approximately. We have developed a novel framework to solve them exactly through a dedicated branch-and-bound algorithm, implementing dedicated acceleration strategies. It is implemented in the \Colorhref{https://github.com/TheoGuyard/El0ps}{\texttt{el0ps}} toolbox, now state-of-the-art to tackle these problems both regarding the framework flexibility and the numerical efficiency. \\ Collaborators: \Colorhref{https://scholar.google.fr/citations?user=wO7HamwAAAAJ}{Cédric Herzet} (ENSAI), \Colorhref{https://scholar.google.fr/citations?user=2LSEQYcAAAAJ}{Clément Elvira} (CentraleSupélec), \Colorhref{https://www.researchgate.net/profile/Ayse-Arslan-7}{Ayse-Nur Arlan} (INRIA Bordeaux), \Colorhref{https://scholar.google.fr/citations?user=lVz-ocwAAAAJ}{Gilles Monnoyer} (Catholic University of Louvain).}
+
+\cventry{Since 2019}{Dimensionality Reduction Methods for Sparse Convex Optimization}{}{}{}
+{Convex sparse optimization problems can be tackled via various first-order methods. We have developed novel techniques for these algorithms allowing for the identification of zero and non-zero entries in the problem solution during the optimization process. Dimensionality reduction and convergence acceleration are then achieved upon this identification.
+Our work mainly relies on sharp convex analysis results related to Fenchel duality theory. \\ Collaborators: \Colorhref{https://scholar.google.fr/citations?user=wO7HamwAAAAJ}{Cédric Herzet} (ENSAI), \Colorhref{https://scholar.google.fr/citations?user=2LSEQYcAAAAJ}{Clément Elvira} (CentraleSupélec).}
+
+\section{Awards}
+
+\cvitem{2025}{\textbf{IVADO Digital Futures Award 1st Prize.} This prize is awarded by \Colorhref{https://ivado.ca}{IVADO} (Canadian Institute for Data Valorization) during the Digital Futures event and recognizes an AI project for its innovation or impact based on a jury of journalists. It has been obtained for my work with NASA on combinatorial optimization for spatial debris remediation. The presentation is available \Colorhref{https://www.youtube.com/watch?v=cVrvMr0oS44}{here}.}
+
+\cvitem{2023}{\textbf{ROADEF Best Student Paper Award.} This prize is awarded by the \Colorhref{https://roadef.org}{ROADEF} (French equivalent of INFORMS) and recognizes an outstanding academic or industrial contribution based on a jury of experts. It has been obtained for my work on branch-and-bounds for L0-norm problems.}
+
+\cvitem{2022}{\textbf{SMAI Best Student Paper Award.} This prize is awarded by the \Colorhref{https://smai.emath.fr}{SMAI} (French equivalent of SIAM) and recognizes an outstanding academic or industrial contribution based on a jury of experts. It has been obtained for my work on branch-and-bounds for L0-norm problems.}
+
+\section{Grants}
+
+\cvitem{2025}{\textbf{IVADO R${}^3$AI Research Grant (\textasciitilde30.000 \$US).} This grant is delivered by \Colorhref{https://ivado.ca}{IVADO} (Canadian Institute for Data Valorization) and aims to support research projects related to modern optimization and machine learning methods. It has been obtained in collaboration with \Colorhref{https://scholar.google.com/citations?user=qbO0xwUAAAAJ}{Thibaut Vidal} for our work with NASA on combinatorial optimization for spatial debris remediation.}
+
+\cvitem{2021}{\textbf{PhD Excellence Grant from INSA Rennes (\textasciitilde80.000 \$US).} One grant is delivered each year by \Colorhref{https://www.insa-rennes.fr}{INSA Rennes} to one of its students to fund a three-year PhD program. It is awarded based on academic excellence and the relevance of the proposed research project.}
+
+\section{Publications}
+
+% \subsection{Journal Article(Accepted)}
+
+\cventry{2025}{El0ps: An exact L0-regularized problem solver}{}{Théo Guyard, Clément Elvira and Cédric Herzet}{Preprint}{}
+
+\cventry{2025}{A generic branch-and-bound algorithm for L0-regularized problems}{}{Théo Guyard, Clément Elvira and Cédric Herzet}{Submitted to \textit{Mathematical Programming Computation}, Springer}{}
+
+\cventry{2024}{Branch-and-bound algorithms for L0-regularized problems}{}{Théo Guyard}{PhD thesis}{}
+
+\cventry{2024}{A new branch-and-bound pruning framework for L0-regularized problems}{}{Théo Guyard, Cédric Herzet, Clément Elvira and Ayse-Nur Arslan}{In \textit{International Conference on Machine Learning (ICML)}, PMLR}{}
+
+\cventry{2023}{Safe peeling for L0-regularized least-squares}{}{Théo Guyard, Gilles Monnoyer, Cédric Herzet and Clément Elvira}{In \textit{European Signal Processing Conference (EUSIPCO)}, IEEE}{}
+
+\cventry{2023}{An efficient solver for L0-penalized sparse problems}{}{Théo Guyard}{In \textit{Congress of the French Operation Research Society (ROADEF)}}{}
+
+\cventry{2022}{Node-screening tests for L0-penalized least-squares problem}{}{Théo Guyard, Cédric Herzet and Clément Elvira}{In \textit{International Conference on Acoustics, Speech, and Signal Processing (ICASSP)}, IEEE}{}
+
+\cventry{2022}{Screen \& relax: Accelerating the resolution of elastic-net by safe identification of the solution support}{}{Théo Guyard, Cédric Herzet and Clément Elvira}{In \textit{International Conference on Acoustics, Speech, and Signal Processing (ICASSP)}, IEEE}{}
+
+\section{Softwares}
+
+\subsection{Projects in Preparation}
+
+\cvitem{\texttt{treeco}}{C++ library for constructing linear decision trees to solve combinatorial optimization problems exactly. The package is to be released once the associated research paper is accepted.}
+
+\cvitem{\texttt{scropion}}{Rust library for optimal planning of large-scale debris-removing spacecrafts. The package is developed in collaboration with NASA and is to be released upon completion of the project.}
+
+\subsection{Projects as Maintainer}
+
+\cvitem{\texttt{el0ps}}{Python toolbox to solve L0-norm problems via flexible and numerically efficient methods. The package is available on \Colorhref{https://github.com/TheoGuyard/El0ps}{github} and \Colorhref{https://pypi.org/project/el0ps/}{pip} under AGPL-v3 license.}
+
+\cvitem{\texttt{exprun}}{Python toolbox to automate pipelines for reproducible experiments. The package is available on \Colorhref{https://github.com/TheoGuyard/exprun}{github} and \Colorhref{https://pypi.org/project/exprun/}{pip} under MIT license.}
+
+\cvitem{\texttt{libsvmdata}}{Julia toolbox to easily fetch libsvm datasets. The package is available on \Colorhref{https://github.com/TheoGuyard/LIBSVMdata.jl}{github} and \Colorhref{https://juliapackages.com/packages/libsvmdata}{juliapackages} under MIT license.}
+
+\subsection{Projects as Contributor}
+
+\cvitem{\texttt{benchopt}}{Benchmarking suite for optimization algorithms built for simplicity, transparency,
+and reproducibility. The package is available on \Colorhref{https://github.com/benchopt/benchopt}{github} and \Colorhref{https://pypi.org/project/benchopt/}{pip} under BSD-3 license.}
+
+\section{Invited Talks}
+
+\cvitem{International Conferences}{JOPT (2025, Canada) • ICML (2024, Austria) • EUSIPCO (2023, Finland) • SIAM Conference on Optimization (2023, USA) • ICASSP (2022, Singapore)}
+
+\cvitem{National Conferences}{IVADO digital futures (2025, Canada) • SMAI-MODE days (2024, France) • PGMO days (2023, France) • GRETSI (2023, France) • ROADEF (2023, France) • PGMO days (2022, France) • GRETSI (2022, France) • SMAI-MODE days (2022, France)}
+
+\cvitem{Workshops}{IVADO R${}^3$AI workshop (2025, Canada) • CIRRELT seminar (2025, Canada) • IMAG seminar (2024, France) • GdR IASIS workshop (2024, France), LN2S seminar (2024, France) • INRIA EDGE seminar (2023, France) • INRIA SODA and MIND seminar (2023, France) • IRMAR seminar (2023, France) • IRMAR seminar (2022, France) }
+
+\cvitem{Others}{CIRRELT lecture group (2025, Canada) • University of Rennes JDR (2024, France)}
+
+
+
+\section{Scientific Duties}
+
+\cvitem{Journal reviews}{Journal of Optimization Theory and Applications (Springer) • Signal Processing Letters (IEEE) • Journal on Data Science (INFORMS) • Inverse Problems (IOP).}
+
+\cvitem{Conference reviews}{European Conference on Artificial Intelligence (ECAI) 2025.}
+
+
+\section{Teaching}
+\cventry{2024}{UE 1-07 : Optimization and numerical methods}{CS Department}{ENSAI}{France}{}
+\cventry{2023 to 2024}{DMA06-OD : Discrete optimization methods}{Math. Department}{INSA Rennes}{France}{}
+\cventry{2023 to 2024}{DMA09-PARCI : Sparse models and methods}{Math. Department}{INSA Rennes}{France}{}
+\cventry{2022}{MathC2+ : Masterclasses for high school students on mathematical tools}{}{}{France}{}
+\cventry{2021}{STP03-ALG3 - Linear algebra}{Engineering Department}{INSA Rennes}{France}{}
+
+\section{Students}
+\cventry{2025}{Lucas Langlade}{MSc research internship}{Graduated from ENPC}{France}{}
+
 \end{document}
